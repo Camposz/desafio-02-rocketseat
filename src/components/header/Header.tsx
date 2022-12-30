@@ -3,20 +3,25 @@ import { HeaderContainer, HeaderRightContainer, MapPinIcon, UserLocalization } f
 import Logo from '../../assets/logo.svg';
 import { CartButton } from '../cartButton/CartButton';
 import { defaultTeheme } from '../../styles/themes/default';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
 	return (
 		<HeaderContainer>
-			<img src={Logo} alt='Logomarca da Coffee Delivery' />
+			<NavLink to={'/'} title={'Home'}>
+				<img src={Logo} alt='Logomarca da Coffee Delivery' />
+			</NavLink>
 			<HeaderRightContainer>
 				<UserLocalization>
 					<MapPinIcon />
 					Vila Velha, ES
 				</UserLocalization>
-				<CartButton
-					background={defaultTeheme.yellowLight}
-					color={defaultTeheme.yellowDark}
-				/>
+				<NavLink to='/checkout' title='Checkout'>
+					<CartButton
+						background={defaultTeheme.yellowLight}
+						color={defaultTeheme.yellowDark}
+					/>
+				</NavLink>
 			</HeaderRightContainer>
 		</HeaderContainer>
 	);

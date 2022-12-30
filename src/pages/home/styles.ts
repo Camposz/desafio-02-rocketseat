@@ -149,36 +149,6 @@ const BuyDetailsContainer = styled.div`
 	width: 100%;
 	margin-top: 33px;
 `;
-const PlusIcon = styled(Plus).attrs({
-	size: 20,
-	weight: 'bold',
-})`
-	color: ${({ theme }) => theme.purple};
-
-	&:hover {
-		color: ${({ theme }) => theme.purpleDark};
-	}
-`;
-
-const MinusIcon = styled(Minus).attrs({
-	size: 20,
-	weight: 'bold',
-})`
-	color: ${({ theme }) => theme.purple};
-
-	&:hover {
-		color: ${({ theme }) => theme.purpleDark};
-	}
-`;
-
-const Counter = styled.div`
-	display: flex;
-	align-items: center;
-	background: ${({ theme }) => theme.button};
-	padding: 8px;
-	border-radius: 6px;
-	gap: 8px;
-`;
 
 const RightBuyDetailsFooter = styled.div`
 	display: flex;
@@ -205,9 +175,6 @@ export {
 	CoffeeCategoryContainer,
 	Price,
 	BuyDetailsContainer,
-	PlusIcon,
-	MinusIcon,
-	Counter,
 	RightBuyDetailsFooter,
 	StoreContainer,
 };
