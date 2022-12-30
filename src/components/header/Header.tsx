@@ -1,13 +1,8 @@
-import {
-	CartButton,
-	CartIcon,
-	HeaderContainer,
-	HeaderRightContainer,
-	MapPinIcon,
-	UserLocalization,
-} from './styles';
+import { HeaderContainer, HeaderRightContainer, MapPinIcon, UserLocalization } from './styles';
 
 import Logo from '../../assets/logo.svg';
+import { CartButton } from '../cartButton/CartButton';
+import { defaultTeheme } from '../../styles/themes/default';
 
 export const Header = () => {
 	return (
@@ -18,9 +13,10 @@ export const Header = () => {
 					<MapPinIcon />
 					Vila Velha, ES
 				</UserLocalization>
-				<CartButton>
-					<CartIcon />
-				</CartButton>
+				<CartButton
+					background={defaultTeheme.yellowLight}
+					color={defaultTeheme.yellowDark}
+				/>
 			</HeaderRightContainer>
 		</HeaderContainer>
 	);

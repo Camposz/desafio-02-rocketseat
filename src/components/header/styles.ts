@@ -31,28 +31,4 @@ const MapPinIcon = styled(MapPin).attrs({
 	color: ${({ theme }) => theme.purple};
 `;
 
-const CartIcon = styled(ShoppingCart).attrs({
-	size: 20,
-	weight: 'fill',
-})`
-	color: ${({ theme }) => theme.yellowDark};
-`;
-
-const CartButton = styled.button`
-	background: ${({ theme }) => theme.yellowLight};
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	border-radius: 6px;
-	padding: 10px;
-`;
-
-export {
-	HeaderContainer,
-	HeaderRightContainer,
-	UserLocalization,
-	MapPinIcon,
-	CartButton,
-	CartIcon,
-};
+export { HeaderContainer, HeaderRightContainer, UserLocalization, MapPinIcon };

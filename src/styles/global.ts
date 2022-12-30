@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
     }
 
+    h1 {
+        font-family: 'Baloo 2';
+    }
+
     body {
         background: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.text};

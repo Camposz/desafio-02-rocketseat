@@ -1,12 +1,41 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
+import {
+	Americano,
+	Expresso,
+	Arabe,
+	CafeComLeite,
+	CafeGelado,
+	Capuccino,
+	ChocolateQuente,
+	Cubano,
+	ExpressoCremoso,
+	Havaiano,
+	Irlandes,
+	Latte,
+	Macchiato,
+	Mochaccino,
+} from '../../assets/images';
 import BenefitsBadge from '../../components/benefitsBadge';
+import CartButton from '../../components/cartButton';
 import { defaultTeheme } from '../../styles/themes/default';
 import {
+	BannerContainer,
 	BenefitsContainer,
+	BuyDetailsContainer,
+	CoffeCard,
 	CoffeeBanner,
-	HomeContainer,
+	CoffeeCategoryBadge,
+	CoffeeCategoryContainer,
+	CoffeListContainer,
+	Counter,
 	HomeSubtittle,
 	HomeTittle,
+	MinusIcon,
+	PlusIcon,
+	Price,
+	RightBuyDetailsFooter,
+	StoreContainer,
+	StoreTitlle,
 } from './styles';
 
 const Iconsize = 20;
@@ -36,29 +65,177 @@ const BenefitsData = [
 	},
 ];
 
+const CoffeList = [
+	{
+		img: Expresso,
+		categories: ['TRADICIONAL'],
+		tittle: 'Expresso Tradicional',
+		description: 'O tradicional café feito com água quente e grãos moídos',
+		price: 9.9,
+	},
+	{
+		img: Americano,
+		categories: ['TRADICIONAL'],
+		tittle: 'Expresso Americano',
+		description: 'Expresso diluído, menos intenso que o tradicional',
+		price: 9.9,
+	},
+	{
+		img: ExpressoCremoso,
+		categories: ['TRADICIONAL'],
+		tittle: 'Expresso Cremoso',
+		description: 'Café expresso tradicional com espuma cremosa',
+		price: 9.9,
+	},
+	{
+		img: CafeGelado,
+		categories: ['TRADICIONAL', 'GELADO'],
+		tittle: 'Expresso Gelado',
+		description: 'Bebida preparada com café expresso e cubos de gelo',
+		price: 9.9,
+	},
+	{
+		img: CafeComLeite,
+		categories: ['TRADICIONAL', 'COM LEITE'],
+		tittle: 'Café com Leite',
+		description: 'Meio a meio de expresso tradicional com leite vaporizado',
+		price: 9.9,
+	},
+	{
+		img: Latte,
+		categories: ['TRADICIONAL', 'COM LEITE'],
+		tittle: 'Latte',
+		description: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
+		price: 9.9,
+	},
+	{
+		img: Capuccino,
+		categories: ['TRADICIONAL', 'COM LEITE'],
+		tittle: 'Capuccino',
+		description: 'Bebida com canela feita de doses iguais de café, leite e espuma',
+		price: 9.9,
+	},
+	{
+		img: Macchiato,
+		categories: ['TRADICIONAL', 'COM LEITE'],
+		tittle: 'Macchiato',
+		description: 'Café expresso misturado com um pouco de leite quente e espuma',
+		price: 9.9,
+	},
+	{
+		img: Mochaccino,
+		categories: ['TRADICIONAL', 'COM LEITE'],
+		tittle: 'Mochaccino',
+		description: 'Café expresso com calda de chocolate, pouco leite e espuma',
+		price: 9.9,
+	},
+	{
+		img: ChocolateQuente,
+		categories: ['ESPECIAL', 'COM LEITE'],
+		tittle: 'Chocolate Quente',
+		description: 'Bebida feita com chocolate dissolvido no leite quente e café',
+		price: 9.9,
+	},
+	{
+		img: Cubano,
+		categories: ['ESPECIAL', 'ALCOÓLICO', 'GELADO'],
+		tittle: 'Cubano',
+		description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
+		price: 9.9,
+	},
+	{
+		img: Havaiano,
+		categories: ['ESPECIAL'],
+		tittle: 'Havaiano',
+		description: 'Bebida adocicada preparada com café e leite de coco',
+		price: 9.9,
+	},
+	{
+		img: Arabe,
+		categories: ['ESPECIAL'],
+		tittle: 'Árabe',
+		description: 'Bebida preparada com grãos de café árabe e especiarias',
+		price: 9.9,
+	},
+	{
+		img: Irlandes,
+		categories: ['ESPECIAL'],
+		tittle: 'Irlandês',
+		description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
+		price: 9.9,
+	},
+];
+
 export const Home = () => {
 	return (
-		<HomeContainer>
-			<div>
-				<HomeTittle>Econtre o café perfeito</HomeTittle>
-				<HomeTittle>para qualquer hora do dia</HomeTittle>
-				<HomeSubtittle>
-					Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
-				</HomeSubtittle>
+		<div>
+			<BannerContainer>
+				<div>
+					<HomeTittle>Econtre o café perfeito</HomeTittle>
+					<HomeTittle>para qualquer hora do dia</HomeTittle>
+					<HomeSubtittle>
+						Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
+					</HomeSubtittle>
 
-				<BenefitsContainer>
-					{BenefitsData.map((benefit, index) => (
-						<p key={index}>
-							{' '}
-							<BenefitsBadge icon={benefit.icon} color={benefit.BadgeColor} />
-							{benefit.text}
-						</p>
-					))}
-				</BenefitsContainer>
-			</div>
-			<div>
+					<BenefitsContainer>
+						{BenefitsData.map((benefit, index) => (
+							<a key={index}>
+								<BenefitsBadge icon={benefit.icon} color={benefit.BadgeColor} />
+								{benefit.text}
+							</a>
+						))}
+					</BenefitsContainer>
+				</div>
+
 				<CoffeeBanner />
-			</div>
-		</HomeContainer>
+			</BannerContainer>
+
+			<StoreContainer>
+				<StoreTitlle>Nossos Cafés</StoreTitlle>
+
+				<CoffeListContainer>
+					{CoffeList.map((coffee, index) => (
+						<CoffeCard key={index}>
+							<img src={coffee.img} />
+
+							<CoffeeCategoryContainer>
+								{coffee.categories.map((category, index) => (
+									<CoffeeCategoryBadge key={index}>
+										{category}
+									</CoffeeCategoryBadge>
+								))}
+							</CoffeeCategoryContainer>
+
+							<h1>{coffee.tittle}</h1>
+							<h2>{coffee.description}</h2>
+
+							<BuyDetailsContainer>
+								<span>
+									R$ <Price>{coffee.price.toFixed(2)}</Price>
+								</span>
+
+								<RightBuyDetailsFooter>
+									<Counter>
+										<button>
+											<MinusIcon />
+										</button>
+										1
+										<button>
+											<PlusIcon />
+										</button>
+									</Counter>
+
+									<CartButton
+										hover={defaultTeheme.purple}
+										background={defaultTeheme.purpleDark}
+										color={defaultTeheme.white}
+									/>
+								</RightBuyDetailsFooter>
+							</BuyDetailsContainer>
+						</CoffeCard>
+					))}
+				</CoffeListContainer>
+			</StoreContainer>
+		</div>
 	);
 };
