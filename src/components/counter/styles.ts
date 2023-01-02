@@ -6,6 +6,7 @@ const PlusIcon = styled(Plus).attrs({
 	weight: 'bold',
 })`
 	color: ${({ theme }) => theme.purple};
+	cursor: pointer;
 
 	&:hover {
 		color: ${({ theme }) => theme.purpleDark};
@@ -17,6 +18,7 @@ const MinusIcon = styled(Minus).attrs({
 	weight: 'bold',
 })`
 	color: ${({ theme }) => theme.purple};
+	cursor: pointer;
 
 	&:hover {
 		color: ${({ theme }) => theme.purpleDark};
@@ -26,10 +28,13 @@ const MinusIcon = styled(Minus).attrs({
 const CounterContainer = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	background: ${({ theme }) => theme.button};
 	padding: 8px;
 	border-radius: 6px;
 	gap: 8px;
+	max-width: 5rem;
+	font-size: 0.8rem;
 `;
 
 export { PlusIcon, MinusIcon, CounterContainer };

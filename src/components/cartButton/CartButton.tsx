@@ -4,7 +4,7 @@ interface CartButtonProps {
 	background: string;
 	hover?: string;
 	color: string;
-	onClick: () => void;
+	onClick?: () => void;
 }
 
 export const CartButton = ({ background, color, hover, onClick }: CartButtonProps) => {
