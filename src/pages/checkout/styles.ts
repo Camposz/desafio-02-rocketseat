@@ -23,6 +23,10 @@ const SelectedCoffeeList = styled.div``;
 const CheckoutLeftContainer = styled.div`
 	display: flex;
 	gap: 20px;
+
+	@media only screen and (max-width: 1309px) {
+		align-self: center;
+	}
 `;
 
 const CheckoutCartItemContainer = styled.div`
@@ -32,8 +36,13 @@ const CheckoutCartItemContainer = styled.div`
 	justify-content: space-between;
 
 	img {
-		height: auto;
+		height: 4rem;
 		width: 4rem;
+		align-self: center;
+	}
+
+	@media only screen and (max-width: 1309px) {
+		flex-direction: column;
 	}
 `;
 const CheckoutCartItemTittle = styled.span`
@@ -50,6 +59,11 @@ const CounterAndRemoveContainer = styled.div`
 const PriceText = styled.span`
 	color: ${({ theme }) => theme.text};
 	font-weight: bold;
+
+	@media only screen and (max-width: 1309px) {
+		margin-top: 15px;
+		align-self: center;
+	}
 `;
 const EmptyCartText = styled.div`
 	padding-top: 2.4rem;
@@ -75,6 +89,85 @@ const ResumeTotalText = styled.span`
 
 const ResumeItenPrice = styled.span``;
 
+const ConfirmButton = styled.button`
+	background: ${({ theme }) => theme.yellow};
+	color: ${({ theme }) => theme.white};
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	border-radius: 6px;
+	font-size: 0.85rem;
+	margin-top: 24px;
+	cursor: pointer;
+	transition: 0.2s;
+
+	&:hover {
+		background: ${({ theme }) => theme.yellowDark};
+	}
+`;
+
+const FormContainer = styled.div`
+	background: ${({ theme }) => theme.card};
+	padding: 40px;
+	border-radius: 6px;
+	width: 100%;
+
+	form {
+		display: flex;
+		flex-direction: column;
+
+		div {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	input {
+		background: ${({ theme }) => theme.input};
+		border: 1px solid ${({ theme }) => theme.button};
+		border-radius: 4px;
+		color: ${({ theme }) => theme.text};
+		font-size: 0.85rem;
+		padding: 10px;
+		margin-top: 16px;
+		&::placeholder {
+			color: ${({ theme }) => theme.label};
+		}
+	}
+`;
+
+const FormTittleContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+
+	div {
+		display: flex;
+		flex-direction: column;
+	}
+`;
+
+const FormSubtittle = styled.span`
+	color: ${({ theme }) => theme.text};
+	font-size: 0.8rem;
+`;
+const FormTittle = styled.span`
+	color: ${({ theme }) => theme.subtitle};
+`;
+
+const Cep = styled.input`
+	max-width: 100%;
+`;
+const Rua = styled.input``;
+const Numero = styled.input``;
+const Complemento = styled.input``;
+const Bairro = styled.input``;
+const Cidade = styled.input``;
+const Uf = styled.input``;
+
 export {
 	CheckoutContainer,
 	CardTittle,
@@ -91,4 +184,16 @@ export {
 	ResumeItenTittle,
 	ResumeItenPrice,
 	ResumeTotalText,
+	ConfirmButton,
+	FormContainer,
+	FormTittleContainer,
+	FormSubtittle,
+	FormTittle,
+	Cep,
+	Rua,
+	Numero,
+	Complemento,
+	Cidade,
+	Bairro,
+	Uf,
 };

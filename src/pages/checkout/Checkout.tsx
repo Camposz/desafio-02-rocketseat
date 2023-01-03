@@ -9,6 +9,7 @@ import {
 	CheckoutCartItemTittle,
 	CheckoutContainer,
 	CheckoutLeftContainer,
+	ConfirmButton,
 	CounterAndRemoveContainer,
 	EmptyCartText,
 	PriceText,
@@ -92,6 +93,7 @@ export const Checkout = () => {
 											R$ {totalWithDelivery.toFixed(2)}
 										</ResumeTotalText>
 									</ResumeItenContainer>
+									<ConfirmButton>CONFIRMAR PEDIDO</ConfirmButton>
 								</ResumeContainer>
 							</>
 						) : (

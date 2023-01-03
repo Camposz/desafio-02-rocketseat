@@ -18,6 +18,7 @@ export const Header = () => {
 				</UserLocalization>
 				<NavLink to='/checkout' title='Checkout'>
 					<CartButton
+						header
 						background={defaultTeheme.yellowLight}
 						color={defaultTeheme.yellowDark}
 					/>

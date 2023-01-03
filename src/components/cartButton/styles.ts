@@ -1,4 +1,5 @@
 import { ShoppingCart } from 'phosphor-react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CartIcon = styled(ShoppingCart).attrs({
@@ -26,4 +27,21 @@ const CartButtonContainer = styled.button<CartButtonContainerProps>`
 	}
 `;
 
-export { CartIcon, CartButtonContainer };
+const CoffeeQuantityBadge = styled.span`
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -40px;
+	margin-right: -35px;
+	background: ${({ theme }) => theme.yellowDark};
+	border-radius: 100px;
+	font-size: 0.7rem;
+	text-decoration: none;
+	cursor: auto;
+	width: 20px;
+	height: 20px;
+	color: ${({ theme }) => theme.white};
+`;
+
+export { CartIcon, CartButtonContainer, CoffeeQuantityBadge };
