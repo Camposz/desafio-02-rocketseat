@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 
-const CheckoutContainer = styled.div`
+export const CheckoutContainer = styled.div`
 	display: grid;
 	grid-template-columns: 44vw 31vw;
 	gap: 2rem;
 	align-items: flex-start;
 `;
 
-const CardTittle = styled.h1`
+export const CardTittle = styled.h1`
 	font-size: 1.1rem;
 	font-weight: bold;
 	margin-bottom: 1rem;
 `;
-const CardResumeContainer = styled.div`
+export const CardResumeContainer = styled.div`
 	background: ${({ theme }) => theme.card};
 	padding: 0 2.5rem 2.5rem 2.5rem;
 	border-radius: 6px 44px 6px 44px;
 `;
 
-const SelectedCoffeeList = styled.div``;
+export const SelectedCoffeeList = styled.div``;
 
-const CheckoutLeftContainer = styled.div`
+export const CheckoutLeftContainer = styled.div`
 	display: flex;
 	gap: 20px;
 
@@ -29,7 +29,7 @@ const CheckoutLeftContainer = styled.div`
 	}
 `;
 
-const CheckoutCartItemContainer = styled.div`
+export const CheckoutCartItemContainer = styled.div`
 	border-bottom: 1px solid ${({ theme }) => theme.button};
 	padding: 24px 0;
 	display: flex;
@@ -45,18 +45,18 @@ const CheckoutCartItemContainer = styled.div`
 		flex-direction: column;
 	}
 `;
-const CheckoutCartItemTittle = styled.span`
+export const CheckoutCartItemTittle = styled.span`
 	color: ${({ theme }) => theme.subtitle};
 	font-size: 1rem;
 	font-weight: 400;
 `;
 
-const CounterAndRemoveContainer = styled.div`
+export const CounterAndRemoveContainer = styled.div`
 	display: flex;
 	margin-top: 8px;
 	gap: 8px;
 `;
-const PriceText = styled.span`
+export const PriceText = styled.span`
 	color: ${({ theme }) => theme.text};
 	font-weight: bold;
 
@@ -65,31 +65,31 @@ const PriceText = styled.span`
 		align-self: center;
 	}
 `;
-const EmptyCartText = styled.div`
+export const EmptyCartText = styled.div`
 	padding-top: 2.4rem;
 `;
-const ResumeContainer = styled.div`
+export const ResumeContainer = styled.div`
 	margin-top: 24px;
 `;
-const ResumeItenContainer = styled.div`
+export const ResumeItenContainer = styled.div`
 	margin-top: 10px;
 
 	display: flex;
 	justify-content: space-between;
 `;
-const ResumeItenTittle = styled.span`
+export const ResumeItenTittle = styled.span`
 	font-size: 0.8rem;
 `;
 
-const ResumeTotalText = styled.span`
+export const ResumeTotalText = styled.span`
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: ${({ theme }) => theme.subtitle};
 `;
 
-const ResumeItenPrice = styled.span``;
+export const ResumeItenPrice = styled.span``;
 
-const ConfirmButton = styled.button`
+export const ConfirmButton = styled.button`
 	background: ${({ theme }) => theme.yellow};
 	color: ${({ theme }) => theme.white};
 	width: 100%;
@@ -108,22 +108,10 @@ const ConfirmButton = styled.button`
 	}
 `;
 
-const FormContainer = styled.div`
-	background: ${({ theme }) => theme.card};
-	padding: 40px;
-	border-radius: 6px;
-	width: 100%;
-
-	form {
-		display: flex;
-		flex-direction: column;
-
-		div {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-	}
+export const FormContainer = styled.form`
+	display: flex;
+	flex-direction: column;
+	margin-top: 32px;
 
 	input {
 		background: ${({ theme }) => theme.input};
@@ -136,10 +124,18 @@ const FormContainer = styled.div`
 		&::placeholder {
 			color: ${({ theme }) => theme.label};
 		}
+		&:focus {
+			border: 1px solid ${({ theme }) => theme.yellowDark};
+		}
+	}
+
+	div {
+		display: flex;
+		gap: 12px;
 	}
 `;
 
-const FormTittleContainer = styled.div`
+export const FormTittleContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	gap: 8px;
@@ -150,50 +146,78 @@ const FormTittleContainer = styled.div`
 	}
 `;
 
-const FormSubtittle = styled.span`
+export const FormSubtittle = styled.span`
 	color: ${({ theme }) => theme.text};
 	font-size: 0.8rem;
 `;
-const FormTittle = styled.span`
+export const FormTittle = styled.span`
 	color: ${({ theme }) => theme.subtitle};
 `;
 
-const Cep = styled.input`
-	max-width: 100%;
-`;
-const Rua = styled.input``;
-const Numero = styled.input``;
-const Complemento = styled.input``;
-const Bairro = styled.input``;
-const Cidade = styled.input``;
-const Uf = styled.input``;
+export const CardTittleContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 
-export {
-	CheckoutContainer,
-	CardTittle,
-	CardResumeContainer,
-	SelectedCoffeeList,
-	CheckoutCartItemContainer,
-	CheckoutCartItemTittle,
-	CounterAndRemoveContainer,
-	PriceText,
-	CheckoutLeftContainer,
-	EmptyCartText,
-	ResumeContainer,
-	ResumeItenContainer,
-	ResumeItenTittle,
-	ResumeItenPrice,
-	ResumeTotalText,
-	ConfirmButton,
-	FormContainer,
-	FormTittleContainer,
-	FormSubtittle,
-	FormTittle,
-	Cep,
-	Rua,
-	Numero,
-	Complemento,
-	Cidade,
-	Bairro,
-	Uf,
-};
+	div {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+`;
+
+export const CardLeftContainer = styled(CardResumeContainer)`
+	padding: 2.5rem;
+	border-radius: 6px;
+`;
+
+export const Cep = styled.input`
+	width: 31%;
+`;
+export const Rua = styled.input``;
+export const Numero = styled.input`
+	width: 31%;
+`;
+export const Complemento = styled.input`
+	flex: 1;
+`;
+export const Bairro = styled.input`
+	width: 31%;
+`;
+export const Cidade = styled.input`
+	flex: 1;
+`;
+export const Uf = styled.input`
+	width: 9%;
+`;
+export const PaymentContainer = styled(CardLeftContainer)`
+	margin-top: 12px;
+`;
+export const PaymentButtonsContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+	margin-top: 32px;
+
+	button {
+		padding: 24px;
+		background: ${({ theme }) => theme.button};
+		border-radius: 6px;
+		flex: 1;
+		transition: 0.2s;
+		cursor: pointer;
+		gap: 12px;
+		display: flex;
+		align-items: center;
+		border: 2px solid transparent;
+
+		&:hover {
+			background: ${({ theme }) => theme.hover};
+		}
+
+		&:active {
+			background: ${({ theme }) => theme.purpleLight};
+			border: 2px solid ${({ theme }) => theme.purple};
+		}
+	}
+`;

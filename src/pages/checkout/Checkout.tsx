@@ -1,24 +1,38 @@
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react';
 import { useContext } from 'react';
 import Counter from '../../components/counter';
 import RemoveItemButton from '../../components/removeItemButton';
 import { CartContext, coffeeListTypes } from '../../contexts/CartContext';
+import { defaultTeheme } from '../../styles/themes/default';
 import {
+	Bairro,
+	CardLeftContainer,
 	CardResumeContainer,
 	CardTittle,
+	CardTittleContainer,
+	Cep,
 	CheckoutCartItemContainer,
 	CheckoutCartItemTittle,
 	CheckoutContainer,
 	CheckoutLeftContainer,
+	Cidade,
+	Complemento,
 	ConfirmButton,
 	CounterAndRemoveContainer,
 	EmptyCartText,
+	FormContainer,
+	Numero,
 	PriceText,
 	ResumeContainer,
 	ResumeItenContainer,
 	ResumeItenPrice,
 	ResumeItenTittle,
 	ResumeTotalText,
+	Rua,
 	SelectedCoffeeList,
+	Uf,
+	PaymentContainer,
+	PaymentButtonsContainer,
 } from './styles';
 
 export const Checkout = () => {
@@ -37,7 +51,58 @@ export const Checkout = () => {
 
 	return (
 		<CheckoutContainer>
-			<CardTittle>Complete seu pedido</CardTittle>
+			<div>
+				<CardTittle>Complete seu pedido</CardTittle>
+				<CardLeftContainer>
+					<CardTittleContainer>
+						<MapPinLine size={25} weight='regular' color={defaultTeheme.yellowDark} />
+						<div>
+							<CheckoutCartItemTittle>Endereço de entrega</CheckoutCartItemTittle>
+							<ResumeItenTittle>
+								Informe o endereço onde deseja receber o seu pedido
+							</ResumeItenTittle>
+						</div>
+					</CardTittleContainer>
+					<FormContainer>
+						<Cep placeholder='CEP' />
+						<Rua placeholder='Rua' />
+						<div>
+							<Numero placeholder='Número' />
+							<Complemento placeholder='Complemento' />
+						</div>
+						<div>
+							<Bairro placeholder='Bairro' />
+							<Cidade placeholder='Cidade' />
+							<Uf placeholder='UF' />
+						</div>
+					</FormContainer>
+				</CardLeftContainer>
+				<PaymentContainer>
+					<CardTittleContainer>
+						<CurrencyDollar size={25} weight='regular' color={defaultTeheme.purple} />
+						<div>
+							<CheckoutCartItemTittle>Pagamento</CheckoutCartItemTittle>
+							<ResumeItenTittle>
+								O pagamento é feito na entrega. Escolha a forma que deseja pagar
+							</ResumeItenTittle>
+						</div>
+					</CardTittleContainer>
+					<PaymentButtonsContainer>
+						<button>
+							<CreditCard size={20} weight='regular' color={defaultTeheme.purple} />{' '}
+							CARTÃO DE CRÉDITO
+						</button>
+						<button>
+							<Bank size={20} weight='regular' color={defaultTeheme.purple} /> CARTÃO
+							DE DÉBITO
+						</button>
+						<button>
+							<Money size={20} weight='regular' color={defaultTeheme.purple} />{' '}
+							DINHEIRO
+						</button>
+					</PaymentButtonsContainer>
+				</PaymentContainer>
+			</div>
 			<div>
 				<CardTittle>Cafés Selecionados</CardTittle>
 				<CardResumeContainer>
